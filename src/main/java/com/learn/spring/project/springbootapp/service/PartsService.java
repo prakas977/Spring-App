@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PartsService {
@@ -23,9 +22,8 @@ public class PartsService {
     public List<Parts> getParts(){
        return repo.findAll();
     }
-
-    public Optional<Parts> getPartsByID(int id){
-        return repo.findById(id);
+    public Parts getPartsById(Integer Id){
+        return repo.getById(Id);
     }
 
 }

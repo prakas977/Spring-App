@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -21,17 +20,17 @@ public class PartsController {
         service.saveParts(parts);
 
     }
+
     @GetMapping("/allParts")
-    public List<Parts> getAllParts(){
-       return service.getParts();
+    public List<Parts> getAllParts() {
+        return service.getParts();
     }
 
     @GetMapping("/Part/{id}")
-    public Optional<Parts> getPartById(@PathVariable int id)
-    {
-        return service.getPartsByID(id);
-    }
+    public Parts getPartById(@PathVariable int id) {
+        return service.getPartsById(id);
+
     }
 
-
+}
 
